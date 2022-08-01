@@ -5,3 +5,5 @@ packages:
   - 'config/*'
   # exclude packages that are inside test directories
   - 'scripts'
+
+  - 'test'

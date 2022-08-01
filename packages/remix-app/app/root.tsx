@@ -11,7 +11,7 @@ import styles from '~/styles/app.css';
 
 export let meta: MetaFunction = () => ({
   charset: 'utf-8',
-  title: 'New Remix App',
+  title: '',
   viewport: 'width=device-width,initial-scale=1',
   'color-scheme': 'dark light',
 });
