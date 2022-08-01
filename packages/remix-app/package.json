@@ -8,7 +8,7 @@
     "build:css": "tailwindcss -m -i styles/app.css -o app/styles/app.css",
     "build:remix": "remix build",
     "build": "run-s build:*",
-    "dev": "concurrently \"npm:dev:css\" \"npm:dev:remix\"",
+    "dev": "concurrently \"pnpm:dev:css\" \"pnpm:dev:remix\"",
     "dev:css": "tailwindcss -w -i styles/app.css -o app/styles/app.css",
     "dev:remix": "remix watch",
     "lint": "eslint .",
