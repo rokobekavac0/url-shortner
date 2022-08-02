@@ -10,7 +10,9 @@ export const Layout = ({ children }: LayoutProps) => {
       className={`relative flex h-full min-h-screen w-full flex-col overflow-hidden bg-[#171717] will-change-auto`}
     >
       <Background />
-      <div className={`z-40 flex h-full grow flex-col`}>{children}</div>
+      <div className={`fallback-background z-40 flex h-full grow flex-col`}>
+        {children}
+      </div>
     </div>
   );
 };

@@ -6,6 +6,17 @@ body {
   height: 100%;
 }
 
+
+.fallback-background {
+  background: url("/ff1.webp");
+  background-size: cover;
+}
+@screen sm { 
+  .fallback-background {
+    background: unset;
+  }
+}
+
 .noise {
   position: absolute;
   inset: 0;
