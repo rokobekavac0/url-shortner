@@ -6,6 +6,7 @@ import {
 
 import { extractFormError } from '~/lib/helpers';
 import type { ActionReturnType } from '~/routes';
+import { Button } from './Button';
 import { Input } from './Input';
 
 export const Form = () => {
@@ -58,13 +59,9 @@ export const Form = () => {
               </div>
             </div>
 
-            <button
-              disabled={transition.state === 'submitting'}
-              className={`h-9 w-full rounded-2xl bg-white text-center font-medium text-black outline-black`}
-              type='submit'
-            >
+            <Button disabled={transition.state === 'submitting'} type='submit'>
               {transition.state === 'submitting' ? 'Creating...' : 'Create'}
-            </button>
+            </Button>
           </div>
         </fieldset>
       </RemixFrom>
