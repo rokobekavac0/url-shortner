@@ -1,7 +1,7 @@
 import type { ActionArgs, MetaFunction } from '@remix-run/cloudflare';
 import type { ZodIssue } from 'zod';
 import { Footer } from '~/components/Footer';
-import { Form } from '~/components/From';
+import { Form } from '~/components/Form';
 import { Hero } from '~/components/Hero';
 
 import { Layout } from '~/components/Layout';
