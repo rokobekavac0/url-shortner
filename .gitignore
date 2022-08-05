@@ -35,6 +35,7 @@ tsconfig.tsbuildinfo
 
 # Cloudflare
 wrangler.dev.toml
+wrangler.toml
 .dev.vars
 
 retry.bat
