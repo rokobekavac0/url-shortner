@@ -12,18 +12,19 @@ jobs:
       - name: ⬇️ Checkout repo
         uses: actions/checkout@v3
 
-      - name: ⎔ Setup node
+      - name: 🏗 Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7.8.0
+          run_install: false
+
+      - name: 🏗 Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: 16.7.0
-
-      - uses: pnpm/action-setup@v2.2.2
-        with:
-          version: 6.0.2
-          run_install: |
-            - recursive: true
-              # args: [--frozen-lockfile, --strict-peer-dependencies]
-            # - args: [--global, gulp, prettier, typescript]
+          node-version: '14'
+          cache: 'pnpm'
+      - name: ⬇ Install
+        run: pnpm install --frozen-lockfile
 
       - name: 🔬 Lint
         run: pnpm run lint
@@ -38,18 +39,19 @@ jobs:
       - name: ⬇️ Checkout repo
         uses: actions/checkout@v3
 
-      - name: ⎔ Setup node
+      - name: 🏗 Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7.8.0
+          run_install: false
+
+      - name: 🏗 Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: 16.7.0
-
-      - uses: pnpm/action-setup@v2.2.2
-        with:
-          version: 6.0.2
-          run_install: |
-            - recursive: true
-              # args: [--frozen-lockfile, --strict-peer-dependencies]
-            # - args: [--global, gulp, prettier, typescript]
+          node-version: '14'
+          cache: 'pnpm'
+      - name: ⬇ Install
+        run: pnpm install --frozen-lockfile
 
       - name: 🔎 Type check
         run: pnpm run typecheck
