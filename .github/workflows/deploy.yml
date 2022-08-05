@@ -46,7 +46,6 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           preCommands: |
-            wrangler kv:namespace create URLS
             apt-get update && apt-get install -y jq
             export KV_NAMESPACE_ID=$(wrangler kv:namespace list | jq -c 'map(select(.title | contains("URLS")))' | jq -r ".[0].id")
             echo "[env.production]" >> wrangler.toml
