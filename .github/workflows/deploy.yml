@@ -14,29 +14,16 @@ jobs:
 
       - name: ⬇️ Checkout repo
         uses: actions/checkout@v3
-
-      - uses: pnpm/action-setup@v2.0.1
-        name: Install pnpm
-        id: pnpm-install
+      - uses: pnpm/action-setup@v2
         with:
-          version: 7
+          version: 7.8.0
           run_install: false
 
-      - name: Get pnpm store directory
-        id: pnpm-cache
-        run: |
-          echo "::set-output name=pnpm_cache_dir::$(pnpm store path)"
-
-      - uses: actions/cache@v3
-        name: Setup pnpm cache
+      - uses: actions/setup-node@v3
         with:
-          path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-
-      - name: Install dependencies
-        run: pnpm install
+          node-version: '14'
+          cache: 'pnpm'
+      - run: pnpm install --frozen-lockfile
 
       - name: 📦 Build
         run: pnpm run build
@@ -46,6 +33,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           preCommands: |
+            wrangler kv:namespace create URLS
             apt-get update && apt-get install -y jq
             export KV_NAMESPACE_ID=$(wrangler kv:namespace list | jq -c 'map(select(.title | contains("URLS")))' | jq -r ".[0].id")
             echo "[env.production]" >> wrangler.toml
