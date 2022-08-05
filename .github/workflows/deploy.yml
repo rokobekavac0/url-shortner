@@ -22,13 +22,27 @@ jobs:
             - recursive: true
               # args: [--frozen-lockfile, --strict-peer-dependencies]
             # - args: [--global, gulp, prettier, typescript]
-
       - name: 📦 Build
         run: pnpm run build
-
       - name: 🚀 Publish
         uses: cloudflare/wrangler-action@2.0.0
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
+          preCommands: |
+            wrangler kv:namespace create URLS
+            apt-get update && apt-get install -y jq
+            export KV_NAMESPACE_ID=$(wrangler kv:namespace list | jq -c 'map(select(.title | contains("URLS")))' | jq -r ".[0].id")
+            echo "[env.production]" >> wrangler.toml
+            echo "kv_namespaces = [{binding=\"URLS\", id=\"${KV_NAMESPACE_ID}\"}]" >> wrangler.toml
+          secrets: |
+            ACCESS_KEY
+            DISSALLOWED_DOMAINS
+            APP_URL
+          environment: production
           workingDirectory: 'packages/worker'
           command: publish
+        env:
+          ACCESS_KEY: ${{ secrets.ACCESS_KEY }}
+          DISSALLOWED_DOMAINS: ${{ secrets.DISSALLOWED_DOMAINS }}
+          APP_URL: ${{secrets.APP_URL }}
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
