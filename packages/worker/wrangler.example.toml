@@ -7,13 +7,6 @@ workers_dev = true
 bucket = "../remix-app/public"
 
 [env.dev]
-vars = {SESSION_SECRET = "should-be-secure-in-prod"}
+vars = { ACCESS_KEY = "secret", DISSALLOWED_DOMAINS = "domain.one domain.two domain.three", APP_URL = "sho.rt" }
 
-[env.dev.durable_objects]
-bindings = [
-  {name = "COUNTER", class_name = "CounterDurableObject"},
-]
-
-[[migrations]]
-tag = "v1"
-new_classes = ["CounterDurableObject"]
+kv_namespaces = [{ binding = "URLS", preview_id = "<preview_id>", id = "<id>" }]
