@@ -33,3 +33,35 @@ body {
 body {
   @apply selection:bg-[#8624e2] selection:text-white selection:bg-opacity-60;
 }
+
+
+@keyframes toastSlideIn {
+  from {
+    transform: translateX(120%);
+  }
+
+  to {
+    transform: translateX(0px);
+  }
+}
+
+
+@keyframes toastSwipeOut {
+  from {
+    transform: translateX(var(--radix-toast-swipe-end-x));
+  }
+
+  to {
+    transform: translateX(calc(120%));
+  }
+}
+  
+@keyframes toastFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
