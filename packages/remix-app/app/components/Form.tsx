@@ -27,6 +27,7 @@ export const Form = () => {
     if (!isAdding && !!actionData?.data) {
       formRef.current?.reset();
       setToastOpen(true);
+      navigator.clipboard.writeText(actionData.data.fullUrl);
     }
   }, [isAdding, actionData]);
 
