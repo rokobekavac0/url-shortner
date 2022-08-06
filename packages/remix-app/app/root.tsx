@@ -8,6 +8,7 @@ import {
   ScrollRestoration,
 } from '@remix-run/react';
 import styles from '~/styles/app.css';
+import { Toast } from './components/Toast';
 
 export let meta: MetaFunction = () => ({
   charset: 'utf-8',
@@ -26,7 +27,9 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Outlet />
+        <Toast.Container>
+          <Outlet />
+        </Toast.Container>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
