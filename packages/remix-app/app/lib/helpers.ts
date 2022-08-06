@@ -19,7 +19,7 @@ export const actionReturnError = (error: Error) => {
     return {
       inputErrors: error.errors as ZodIssue[],
       inputErrorsFormatted: error.format(),
-      data: [],
+      data: null,
       errors: [],
     };
   }
@@ -27,7 +27,7 @@ export const actionReturnError = (error: Error) => {
   return {
     inputErrors: [] as ZodIssue[],
     inputErrorsFormatted: {},
-    data: [],
+    data: null,
     errors: [error],
   };
 };
