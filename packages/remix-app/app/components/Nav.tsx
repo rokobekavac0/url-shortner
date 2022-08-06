@@ -17,6 +17,7 @@ export const Nav = () => {
             className={` border-opacity-70 pr-4 text-base font-medium leading-6`}
           >
             {/* <Link to={'/directory'}>Directory</Link> */}
+            {/* Te */}
           </div>
         </div>
       </div>
