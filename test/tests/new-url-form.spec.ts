@@ -1,10 +1,11 @@
 import { expect, test } from '@playwright/test';
 
-test.describe('Create new URL form', () => {
-  test('', async ({ page, baseURL }) => {
-    // Go to http://localhost:8787/?index
+test.describe('Create new url', () => {
+  test.beforeEach(async ({ page, baseURL }) => {
     await page.goto(baseURL!);
+  });
 
+  test('Invalid URL', async ({ page, baseURL }) => {
     // Click [placeholder="example\.com"]
     await page.locator('[placeholder="example\\.com"]').click();
 
