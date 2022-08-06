@@ -5,6 +5,7 @@ on:
       - 'packages/**'
       - 'config/**'
       - 'test/**'
+      - '.github/**'
 
 jobs:
   deploy:
@@ -41,6 +42,8 @@ jobs:
             apt-get update && apt-get install -y jq
             export KV_NAMESPACE_ID=$(wrangler kv:namespace list | jq -c 'map(select(.title | contains("URLS")))' | jq -r ".[0].id")
             echo "kv_namespaces = [{binding=\"URLS\", id=\"${KV_NAMESPACE_ID}\"}]" >> wrangler.toml
+            echo "[site]" >> wrangler.toml
+            echo "bucket = '../remix-app/public'" >> wrangler.toml
           secrets: |
             ACCESS_KEY
             DISSALLOWED_DOMAINS
