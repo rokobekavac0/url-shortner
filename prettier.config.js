@@ -6,4 +6,4 @@ module.exports = {
   trailingComma: 'all',
   plugins: [require('prettier-plugin-tailwindcss')],
   tailwindConfig: './packages/remix-app/tailwind.config.js',
-}
+};

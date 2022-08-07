@@ -5,6 +5,6 @@ let config = {
   settings: {
     files: ['**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx'],
   },
-}
+};
 
-module.exports = config
+module.exports = config;

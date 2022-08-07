@@ -6,8 +6,6 @@ test.describe('Create new url', () => {
   });
 
   test('Invalid URL', async ({ page, baseURL }) => {
-    // Click [placeholder="example\.com"]
-
     await expect(page).toHaveURL('http://localhost:8787/?index');
   });
 });
