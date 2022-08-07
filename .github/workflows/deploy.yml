@@ -1,13 +1,13 @@
-name: 🕊 Deployment
+name: Deployment
 on:
   push:
     branches:
       - main
     paths:
-      - 'packages/**'
-      - 'config/**'
-      - 'test/**'
-      - '.github/**'
+      - "packages/**"
+      - "config/**"
+      - "test/**"
+      - ".github/**"
 
 jobs:
   deploy:
@@ -28,10 +28,10 @@ jobs:
       - name: 🏗 Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: '14'
-          cache: 'pnpm'
+          node-version: "14"
+          cache: "pnpm"
       - name: ⬇ Install
-        run: pnpm install --frozen-lockfile --prod
+        run: pnpm install --frozen-lockfile
 
       - name: 📦 Build
         run: pnpm run build
@@ -50,7 +50,7 @@ jobs:
             ACCESS_KEY
             DISSALLOWED_DOMAINS
             APP_URL
-          workingDirectory: 'packages/worker'
+          workingDirectory: "packages/worker"
           command: publish
         env:
           ACCESS_KEY: ${{ secrets.ACCESS_KEY }}

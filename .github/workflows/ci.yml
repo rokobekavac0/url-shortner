@@ -1,12 +1,10 @@
 name: 🧪 CI
 on:
   push:
+    branches: 
+      - main
   pull_request:
-    paths:
-      - 'packages/**'
-      - 'config/**'
-      - 'test/**'
-      - '.github/**'
+    types: [closed]
 
 jobs:
   lint:
