@@ -40,7 +40,7 @@ export const Input = ({
         </label>
       )}
       <input
-        className={`${inputStyle} h-10 w-full rounded-2xl border bg-[#171717] bg-opacity-10 px-3 text-sm placeholder-[#525252] shadow-[0px_0px_1px_2px_rgba(255,255,255,0)] backdrop-blur-sm transition-all  focus:shadow-[0px_0px_1px_2px_rgba(255,255,255,0.69)]  focus:outline-none`}
+        className={`${inputStyle} h-10 w-full rounded-2xl border bg-[#171717] bg-opacity-10 px-3 text-sm text-white text-opacity-80 placeholder-[#525252] shadow-[0px_0px_1px_2px_rgba(255,255,255,0)] backdrop-blur-sm transition-all  focus:shadow-[0px_0px_1px_2px_rgba(255,255,255,0.69)]  focus:outline-none`}
         name={name}
         autoComplete='off'
         autoCorrect='off'

@@ -6,6 +6,7 @@ on:
       - 'packages/**'
       - 'config/**'
       - 'test/**'
+      - '.github/**'
 
 jobs:
   lint:
