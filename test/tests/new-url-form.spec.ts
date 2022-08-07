@@ -1,4 +1,5 @@
 import { expect, Page, test } from '@playwright/test';
+import { key } from '../playwright.config';
 
 interface URLForm {
   url: string;
@@ -21,7 +22,7 @@ test.describe('New url form', () => {
     await fillFrom(page, {
       url: 'invalid-url',
       slug: 'test',
-      key: process.env.KEY!,
+      key: key,
     });
 
     await page.click('button[type="submit"]');
@@ -32,7 +33,7 @@ test.describe('New url form', () => {
   test('error if url domain is disallowed', async ({ page, baseURL }) => {
     await fillFrom(page, {
       url: 'localhost:8787',
-      key: process.env.KEY!,
+      key: key,
     });
 
     await page.click('button[type="submit"]');
@@ -55,7 +56,7 @@ test.describe('New url form', () => {
   test('receive slug if not submitted', async ({ page, baseURL }) => {
     await fillFrom(page, {
       url: 'https://random-url.com',
-      key: process.env.KEY!,
+      key: key,
     });
 
     await page.click('button[type="submit"]');

@@ -1,12 +1,13 @@
 import { expect, test } from '@playwright/test';
 import axios from 'axios';
 
-const FormData = require('form-data');
+import FormData from 'form-data';
+import { key } from '../playwright.config';
 
 const testUrlObj = {
   url: 'https://example.com/',
   slug: 'p39en4ru',
-  key: process.env.KEY,
+  key: key,
 };
 
 test('redirect to existing url', async ({ page, baseURL }) => {
