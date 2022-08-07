@@ -65,8 +65,11 @@ jobs:
       - name: ⬇ Install
         run: pnpm install --frozen-lockfile
 
-      - name: 🧪 Test
-        run: pnpm test
+      - name: run
+        run: pnpm start:test
+
+      # - name: 🧪 Test
+      #   run: pnpm test
 
   typecheck:
     name: ʦ Typecheck
