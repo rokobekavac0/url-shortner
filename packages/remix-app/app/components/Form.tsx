@@ -96,7 +96,10 @@ export const Form = () => {
       </div>
       <Toast open={toastOpen} onOpenChange={setToastOpen}>
         <Toast.Title>
-          Link <b>{actionData?.data?.fullUrl} </b> added
+          Added
+          <span className={`font-medium`} data-url={actionData?.data?.fullUrl}>
+            {actionData?.data?.fullUrl}
+          </span>
         </Toast.Title>
       </Toast>
     </>
