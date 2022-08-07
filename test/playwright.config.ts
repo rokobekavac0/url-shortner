@@ -1,11 +1,18 @@
 import type { PlaywrightTestConfig } from '@playwright/test';
 import { devices } from '@playwright/test';
+import path from 'path';
+import invariant from 'tiny-invariant';
 
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
  */
-require('dotenv').config();
+
+require('dotenv').config({ path: path.resolve(__dirname, '..', '.env.local') });
+
+invariant(process.env.ACCESS_KEY, 'ACCESS_KEY is required');
+
+export const key = process.env.ACCESS_KEY;
 
 /**
  * See https://playwright.dev/docs/test-configuration.
@@ -99,7 +106,7 @@ const config: PlaywrightTestConfig = {
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: 'pnpm run -w dev',
+    command: 'pnpm run -w start:test',
     port: 8787,
   },
 };

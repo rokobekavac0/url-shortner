@@ -9,7 +9,7 @@
     "build:remix": "remix build",
     "build": "run-s build:*",
     "dev": "concurrently \"pnpm:dev:css\" \"pnpm:dev:remix\"",
-    "dev:test": "pnpm run build",
+    "start:test": "pnpm run build",
     "dev:css": "tailwindcss -w -i styles/app.css -o app/styles/app.css",
     "dev:remix": "remix watch",
     "lint": "eslint .",
