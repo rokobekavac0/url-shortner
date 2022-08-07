@@ -60,16 +60,13 @@ jobs:
       - name: 🏗 Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: "14"
+          node-version: "latest"
           cache: "pnpm"
       - name: ⬇ Install
         run: pnpm install --frozen-lockfile
 
-      - name: run
-        run: pnpm start:test
-
-      # - name: 🧪 Test
-      #   run: pnpm test
+      - name: 🧪 Test
+        run: pnpm test
 
   typecheck:
     name: ʦ Typecheck
