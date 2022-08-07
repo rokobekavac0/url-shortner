@@ -39,3 +39,4 @@ wrangler.dev.toml
 
 retry.bat
 .vscode/
+**/dist/

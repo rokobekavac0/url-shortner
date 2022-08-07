@@ -5,6 +5,7 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
+    "dev:test": "turbo run dev:test",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,md,yml}\"",
     "lint": "turbo run lint",
     "setup": "node -r esbuild-register scripts/setup.ts",
