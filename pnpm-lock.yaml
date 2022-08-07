@@ -92,6 +92,7 @@ importers:
       cloudflare-env: workspace:*
       eslint: ^8.15.0
       eslint-config-custom: workspace:*
+      miniflare: ^2.6.0
       remix-app: workspace:*
       tsconfig: workspace:*
       typescript: ^4.6.4
@@ -105,6 +106,7 @@ importers:
       cloudflare-env: link:../../config/cloudflare-env
       eslint: 8.20.0
       eslint-config-custom: link:../../config/eslint-config-custom
+      miniflare: 2.6.0
       tsconfig: link:../../config/tsconfig
       typescript: 4.7.4
       wrangler: 2.0.23
