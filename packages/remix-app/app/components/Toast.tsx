@@ -24,14 +24,14 @@ export const Toast = ({ onOpenChange, open, ...props }: ToastProps) => {
 };
 
 export const ToastTitle = ({ ...props }: ToastTitleProps) => {
-  return <Title {...props} className={`text-sm font-medium`}></Title>;
+  return <Title {...props} className={`text-sm font-normal`}></Title>;
 };
 
 export const ToastContainer = ({ children, ...p }: ToastProviderProps) => {
   return (
     <ToastProvider {...p} swipeDirection='right'>
       <ToastViewport
-        className={`fixed right-0 bottom-0 z-[9999] flex w-full flex-col items-end justify-end gap-4 p-8`}
+        className={`fixed right-0 bottom-0 z-[9999] flex w-full flex-col items-end justify-end gap-4 p-6 md:p-8`}
       />
       {children}
     </ToastProvider>
