@@ -38,3 +38,4 @@ wrangler.dev.toml
 .dev.vars
 
 retry.bat
+.vscode/
