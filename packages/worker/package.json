@@ -19,6 +19,7 @@
     "@cloudflare/workers-types": "^3.10.0",
     "cloudflare-env": "workspace:*",
     "concurrently": "^7.2.1",
+    "esbuild": "^0.14.53",
     "eslint": "^8.15.0",
     "eslint-config-custom": "workspace:*",
     "miniflare": "^2.6.0",
