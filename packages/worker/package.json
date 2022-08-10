@@ -4,9 +4,11 @@
   "license": "MIT",
   "scripts": {
     "dev": "concurrently \"pnpm:dev:esbuild\" \"pnpm:dev:miniflare\"",
-    "dev:esbuild": "esbuild --bundle --sourcemap --format=esm --watch --external:__STATIC_CONTENT_MANIFEST ./src/index.ts --outfile=./dist/worker.mjs",
-    "dev:miniflare": "miniflare -d --watch --kv URLS --live-reload -e ../../.env.local -V -m -s ../remix-app/public ./dist/worker.mjs",
-    "start:test": "pnpm run dev:esbuild && pnpm run dev:miniflare",
+    "dev:esbuild": "pnpm run build:esbuild --watch",
+    "dev:miniflare": "pnpm run build:miniflare --watch",
+    "build:miniflare" : "miniflare -d --kv URLS --live-reload -e ../../.env.local -V -m -s ../remix-app/public ./dist/worker.mjs",
+    "build:esbuild": "esbuild --bundle --sourcemap --format=esm --external:__STATIC_CONTENT_MANIFEST ./src/index.ts --outfile=./dist/worker.mjs",
+    "start:test": "pnpm run build:esbuild && pnpm run build:miniflare",
     "lint": "eslint .",
     "typecheck": "tsc -b"
   },

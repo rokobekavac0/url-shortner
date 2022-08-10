@@ -65,8 +65,8 @@ jobs:
       - name: ⬇ Install
         run: pnpm install --frozen-lockfile
 
-      - name: run
-        run: pnpm start:test
+      - name: Install playwright 
+        run: pnpm run -F test playwright:install
 
       - name: 🧪 Test
         run: pnpm test
