@@ -5,7 +5,7 @@ export const appText = {
   hero: {
     title: `${appName} — tiny url shortner`,
     subtitle:
-      'Hosted on Cloudflare Workers and built with Cloudflare KV storage, enabling <100ms redirect times across the globe.',
+      'Hosted on Cloudflare Workers and using Cloudflare KV storage, enabling <100ms redirect times across the globe.',
   },
   socials: {
     githubLink: 'https://github.com/rokobekavac0/url-shortner',
