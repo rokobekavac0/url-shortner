@@ -42,7 +42,7 @@ export const Form = () => {
               <div
                 className={`text-2xl font-semibold leading-8 text-white text-opacity-80`}
               >
-                Create new link
+                Add a new link
               </div>
               <Input
                 description='Url you want to shorten'
@@ -100,6 +100,7 @@ export const Form = () => {
           <span className={`font-medium`} data-url={actionData?.data?.fullUrl}>
             {actionData?.data?.fullUrl}
           </span>
+          and copied to clipboard
         </Toast.Title>
       </Toast>
     </>
