@@ -1,5 +1,5 @@
 <p align="center">
-<img src=".github/sc1.jpg">
+<img src=".github/sc.jpg">
 <br>
 <i>rkbk.gq - Personal url shortner</i>
 </p>
