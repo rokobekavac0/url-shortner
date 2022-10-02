@@ -17,7 +17,7 @@ export const Toast = ({ onOpenChange, open, ...props }: ToastProps) => {
       {...props}
       className={`flex h-16 w-full items-center rounded-xl border border-[#404040] bg-[#171717] bg-opacity-70 px-6 text-white text-opacity-80 backdrop-blur data-swipe-closed:animate-[toastFadeIn_100ms_ease-in-out] data-swipe-move:translate-x-[var(--radix-toast-swipe-move-x)] data-swipe-cancel:translate-x-0 data-swipe-cancel:duration-200 data-swipe-end:animate-[toastSwipeOut_100ms_ease-out] md:w-96`}
       open={open}
-      duration={3000}
+      duration={7500}
       onOpenChange={onOpenChange}
     ></T>
   );
