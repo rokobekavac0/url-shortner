@@ -96,10 +96,13 @@ export const Form = () => {
       </div>
       <Toast open={toastOpen} onOpenChange={setToastOpen}>
         <Toast.Title>
-          Added
-          <span className={`font-medium`} data-url={actionData?.data?.fullUrl}>
+          Added{' '}
+          <span
+            className={`select-all font-medium`}
+            data-url={actionData?.data?.fullUrl}
+          >
             {actionData?.data?.fullUrl}
-          </span>
+          </span>{' '}
           and copied to clipboard
         </Toast.Title>
       </Toast>
